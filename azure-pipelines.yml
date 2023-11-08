@@ -1,0 +1,25 @@
+# Node.js
+# Build a general Node.js project with npm.
+# Add steps that analyze code, save build artifacts, deploy, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
+
+trigger:
+- main
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+- task: AzureResourceManagerTemplateDeployment@3
+  inputs:
+    deploymentScope: 'Resource Group'
+    azureResourceManagerConnection: 'Sanjay'
+    subscriptionId: '81f0bd04-cb6d-4267-a768-e3d8f2ec475c'
+    action: 'Create Or Update Resource Group'
+    resourceGroupName: 'Sanjay-RG'
+    location: 'East US 2'
+    templateLocation: 'Linked artifact'
+    csmFile: 'azuredeploy'
+    csmParametersFile: 'azuredeploy.parameters'
+    deploymentMode: 'Incremental'
+    deploymentName: 'testnode'
