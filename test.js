@@ -1,3 +1,2 @@
-test
-issue
-lo
+lksmaksatest
+issue lo
