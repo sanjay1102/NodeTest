@@ -1,3 +1,2 @@
 lksmaksatest
-issue
-second
+issue lo
